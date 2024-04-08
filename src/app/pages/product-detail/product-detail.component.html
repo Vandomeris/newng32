@@ -1,0 +1,6 @@
+@if(post$ | async){
+<div>
+    <p>Заголовок статьи: {{ (post$ | async)?.title}}</p>
+    <p>Текст статьи: {{ (post$ | async)?.body}}</p>
+</div>
+}

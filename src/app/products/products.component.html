@@ -1,1 +1,15 @@
-<p>products works!</p>
+@if(products$ | async){
+
+<div class="">
+
+    @for (product of products$ | async; track product.id) {
+    <a routerLink="/products/{{product.id}}" class="flex gap-x-4 transition-all hover:text-orange-400">
+        <p>{{ product.id }}</p>
+        |
+        <p>{{ product.title }}</p>
+    </a>
+    }
+
+</div>
+
+}
