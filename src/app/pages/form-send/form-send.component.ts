@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-form-send',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './form-send.component.html',
   styleUrl: './form-send.component.scss'
 })
@@ -12,19 +12,22 @@ export class FormSendComponent {
 
   constructor(private http: HttpClient) { }
 
-  userId?: number
-  title?: string
-  body?: string
+
+  postForm = new FormGroup({
+    userId: new FormControl(''),
+    title: new FormControl(''),
+    body: new FormControl(''),
+  })
+
 
   sendForm() {
     console.log('Форма отпрвилась');
+    console.log(this.postForm.value);
 
-    this.http.post('api/test',
-      {
-        'userId': this.userId,
-        'title': this.title,
-        'body': this.body
-      },
+
+    this.http.post('https://jsonplaceholder.typicode.com/posts', {
+      ...this.postForm.value
+    }
     ).subscribe((data) => console.log(data))
   }
 
