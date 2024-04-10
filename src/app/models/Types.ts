@@ -25,3 +25,23 @@ export interface Post {
     title: string
     body: string
 }
+
+
+export interface Card {
+    title: string;
+    description: string;
+    url: string;
+}
+
+
+export interface SliderRecipes {
+    id: number,
+    name: string,
+    image: string,
+    instructions: string,
+    rating: string
+}
+
+export interface SliderRecipe {
+    recipes: SliderRecipes[]
+}

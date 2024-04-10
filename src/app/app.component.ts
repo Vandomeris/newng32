@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-
+import { register } from 'swiper/element';
+register()
 @Component({
   selector: 'app-root',
   standalone: true,

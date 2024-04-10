@@ -1,0 +1,8 @@
+<div class="w-[500px] mx-auto">
+    <input type="text" class="w-full border py-2 px-4 text-indigo-600" [(ngModel)]="rubles"
+        placeholder="Введите количество рублей">
+    <input type="text" class="w-full border my-5 py-2 px-4 text-indigo-600" [(ngModel)]="course"
+        placeholder="Введите количество рублей">
+
+    <p>Баксов получишь: {{ dollars() }}</p>
+</div>

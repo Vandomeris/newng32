@@ -1,0 +1,10 @@
+<swiper-container appSwiper [config]="swiperConfig" style="background: black;color: white;">
+    @for (recipe of (sliderRecipes$ | async)?.recipes; track recipe.id) {
+    <swiper-slide>
+        <img src="{{recipe.image}}" alt="">
+        <p>{{ recipe.name }}</p>
+        <p>{{ recipe.instructions }}</p>
+        <p>{{ recipe.rating }}</p>
+    </swiper-slide>
+    }
+</swiper-container>

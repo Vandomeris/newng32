@@ -1,0 +1,12 @@
+<div class="relative">
+    <button (click)="show = !show">{{ title }}</button>
+    @if(show){
+    <div class="absolute top-full left-0 p-4 bg-slate-500 rounded-lg text-white">
+        <ul>
+            @for (link of links; track $index) {
+            <li><a routerLink="{{link.link}}">{{ link.title }}</a></li>
+            }
+        </ul>
+    </div>
+    }
+</div>

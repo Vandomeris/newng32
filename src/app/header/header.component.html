@@ -1,7 +1,23 @@
-<header class="flex justify-around">
-    <div>logo</div>
+<header class="flex justify-between container mx-auto items-center">
+    <div class="w-[200px]">
+        <img class="w-full" src="assets/logo.png" alt="">
+    </div>
     <nav>
-        <a class="mx-5" routerLink="/">Home</a>
-        <a class="mx-5" routerLink="/products">Products</a>
+        <ul class="flex gap-x-10">
+            <li><a href="#">Homepage</a></li>
+            <li>
+                <app-dropdown title="Recipes" [links]="[
+                {
+                    title: 'Italian',
+                    link: '#'
+                },
+                {
+                    title: 'Russian',
+                    link: '#'
+                }
+                ]"></app-dropdown>
+            </li>
+            <li><a href="#">Buy</a></li>
+        </ul>
     </nav>
 </header>
