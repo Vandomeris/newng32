@@ -1,13 +1,13 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { SwiperDirective } from './swiper.directive';
 import { SwiperOptions } from 'swiper/types';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { RecipesService } from '../../serives/recipes.service';
+import { RatingToRecomendPipe } from '../../pipes/rating-to-recomend.pipe';
 
 @Component({
   selector: 'app-home-slider',
   standalone: true,
-  imports: [CommonModule, SwiperDirective, AsyncPipe],
+  imports: [CommonModule, AsyncPipe, RatingToRecomendPipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './home-slider.component.html',
   styleUrl: './home-slider.component.scss'

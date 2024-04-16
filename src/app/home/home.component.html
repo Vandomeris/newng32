@@ -1,3 +1,10 @@
 <div class="container mx-auto">
     <app-home-slider></app-home-slider>
+
+    <app-compilation title="Super Delicious" [dishes]="(deliciousCompilation$ | async)?.recipes"></app-compilation>
+
+
+    <app-compilation title="Sweet Tooth" [dishes]="($sweetCompilation$ | async)?.recipes"></app-compilation>
+
+    <app-home-categories> </app-home-categories>
 </div>

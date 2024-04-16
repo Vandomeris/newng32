@@ -34,14 +34,16 @@ export interface Card {
 }
 
 
-export interface SliderRecipes {
+export interface Recipe {
     id: number,
     name: string,
     image: string,
     instructions: string,
-    rating: string
+    rating: string,
+    cuisine: string
 }
 
 export interface SliderRecipe {
-    recipes: SliderRecipes[]
+    recipes: Recipe[]
 }
+
