@@ -1,0 +1,17 @@
+<div class="container mx-auto my-5">
+    @for (item of data; track $index) {
+    <div>
+        <button (click)="showItem($index)">{{ item.title }} - его индекс {{$index}}</button>
+    </div>
+
+    @if(show === true && activeItem === $index){
+    <p>{{ item.body }}</p>
+    }
+
+    }
+</div>
+
+<div class="mt-4">
+    Текуший активный элемент - {{activeItem}}
+    Аккордеон показан? - {{show}}
+</div>
